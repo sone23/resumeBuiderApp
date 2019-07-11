@@ -93,9 +93,40 @@ var app= new Vue ({
                 phone: "222-222-2222",
                 job_title: "Profession",
                 about_me: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nostrum delectus laborum harum dolorem nesciunt ipsa voluptatem accusamus, ab facere, ullam labore maiores quia voluptates placeat, itaque quas consectetur illum.",
-            }
+            },
+            template: "malia",
+      templateLabel: "Choose a Template",
+      templates: [
+        {
+          model: "malia",
+          name: "Template 1"
+        },
+        {
+          model: "hannah",
+          name: "Template 2"
+        },
+        {
+          model: "taft",
+          name: "Template 3"
+        },
+        {
+          model: "sharon",
+          name: "Template 4"
+        },
+      ],
       
         
+    },
+    created: function () {
+      new KellyColorPicker({
+        place : 'color-picker',
+        size : 150,
+        input : 'color',
+        method: 'triangle',
+        input_format: "rgba",
+        alpha_slider: true,
+  
+      });
     },
 
     methods: {
@@ -163,6 +194,29 @@ var app= new Vue ({
           date: "",
           description: "",
         }
+      },
+      addExtracurricular: function(){
+        this.extracurricularlist.push(this.extracurricularEdit)
+  
+        this.extracurricularEdit= {
+          title: "",
+          proficiency:  "",
+        }
+      },
+      newKellyColorPicker: function () {
+        if (this.pickingColor == false) {
+          new KellyColorPicker({
+            place : 'color-picker',
+            size : 150,
+            input : 'color',
+            method: 'triangle',
+            input_format: "rgba",
+            alpha_slider: true,
+          });
+          this.pickingColor = true;
+        } else if (this.pickingColor == false) {
+        }
+  
       },
 
     },
