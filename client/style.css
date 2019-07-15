@@ -1,0 +1,31 @@
+#padding {
+    padding: 2% 2%;
+  }
+  #avatar {
+    background-image: url("https://avatars0.githubusercontent.com/u/9064066?v=4&s=460");
+    height: 150%;
+    background-position: center;
+    background-size: contain;
+  }
+  [v-cloak]{
+    display: none;
+  }
+  .template{
+    margin: 10px;
+    padding: 5px;
+    margin-top: 0px;
+    background-color: selected_color_accent;
+}
+.information{
+    padding-top: 5px;
+}
+.v-progress-linear{
+    margin: 0rem 0;
+}
+/* progress {
+   
+    background-color: orangered;
+  }
+  progress::-webkit-progress-bar {
+    color: crimson;
+  } */

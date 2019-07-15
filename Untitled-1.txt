@@ -1,0 +1,54 @@
+<v-card class="template" >
+                                                <v-card-title primary-title>
+                                                    <div>
+                                                        <div :style="{color : color}" class="headline">{{info.first_name}} {{info.last_name}}</div>
+                                                        <span>{{info.job_title}}</span>
+                                                    </div>
+                                                </v-card-title>
+                                                
+                                                <v-card-actions>
+                                                    <v-layout row class="template" :style="{color : color}">
+                                                        <v-flex xs3>
+                                                            {{info.phone}}
+                                                        </v-flex>
+                                                        <v-flex xs4>
+                                                            {{info.email}}
+                                                        </v-flex>
+                                                        <v-flex xs5>
+                                                            {{info.address}}, {{info.city}}  {{info.state}} {{info.zip}}  {{info.country}}
+                                                        </v-flex>
+                                                    </v-layout>
+                                                    
+                                                </v-card-actions>
+                                                <v-divider></v-divider>
+                                                <v-layout row class="information">
+                                                    <v-flex xs6>
+                                                        <v-card-title :style="{color : color}">PROFILE</v-card-title>
+                                                        <v-card-text>{{info.about_me}}
+                                                        </v-card-text>
+                                                        <v-card-title :style="{color : color}">SKILLS</v-card-title>
+                                                            <div v-for="skill in programslist">
+                                                                <v-card-text>{{skill.name}}
+                                                                    <v-progress-linear
+                                                                    :style="{color : color}"
+                                                                    height="10"
+                                                                    :value="skill.percentage"
+                                                                ></v-progress-linear>                                       
+                                                                </v-card-text>
+                                                            </div>
+                                                            <v-card-title :style="{color : color}">PASSIONS</v-card-title>
+                                                            <v-card-text v-for="passion in extracurricularlist">
+                                                                <v-icon>flight_takeoff</v-icon>
+                                                                <span class="text-capitalize"> {{passion}}</span>
+                                                            </v-card-text>
+                                                    </v-flex>
+                                                    <v-divider vertical></v-divider>
+                            
+                                                    <v-flex xs6>
+                                                        <v-card-title :style="{color : color}">Education</v-card-title>
+                                                            <v-card-text v-for="school in educationlist">
+                            
+                                                            </v-card-text>
+                                                    </v-flex>
+                                                </v-layout>
+                                            </v-card>
